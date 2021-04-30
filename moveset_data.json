@@ -1,0 +1,20 @@
+{"movesets": [
+	{"name":"MISSINGNO", "level":[[1,1]], "TM":[], "egg":[], "tutor":[]},
+	{"name":"Rabbud", "level":[[1,1], [1,45], [5,22], [6, 24]], "TM":[], "egg":[], "tutor":[]},
+	{"name":"Rabbud2", "level":[[1,1], [1,45], [5,22], [6, 24]], "TM":[], "egg":[], "tutor":[]},
+	{"name":"Rabbud3", "level":[[1,1], [1,45], [5,22], [6, 24]], "TM":[], "egg":[], "tutor":[]},
+	{"name":"Fawnash", "level":[[1,33], [1,49], [7,53], [8, 55], [16, 22]], "TM":[], "egg":[], "tutor":[]},
+	{"name":"Coalling", "level":[[1,33], [1,49], [7,53], [8, 55]], "TM":[], "egg":[], "tutor":[]},
+	{"name":"Stampheat", "level":[[1,33], [1,49], [7,53], [8, 55]], "TM":[], "egg":[], "tutor":[]},
+	{"name":"Kratide", "level":[[1,35], [1,43], [10,54], [11, 40]], "TM":[], "egg":[], "tutor":[]},
+	{"name":"Arsenake", "level":[[1,35], [1,43], [10,54], [11, 40]], "TM":[], "egg":[], "tutor":[]},
+	{"name":"Nessynide", "level":[[1,35], [1,43], [10,54], [11, 40]], "TM":[], "egg":[], "tutor":[]},
+	{"name":"Squebounce", "level":[[1,33], [1,28], [6,44], [11, 29]], "TM":[], "egg":[], "tutor":[]},
+	{"name":"Squirret", "level":[[1,33], [1,28], [6,44], [11, 29]], "TM":[], "egg":[], "tutor":[]},
+	{"name":"Primegg", "level":[[1,16], [1,10], [7,47], [8, 48]], "TM":[], "egg":[], "tutor":[]},
+	{"name":"Ibiris", "level":[[1,16], [1,10], [9,47], [11, 48]], "TM":[], "egg":[], "tutor":[]},
+	{"name":"Beatoll", "level":[[1,33], [1,51], [5,52], [6, 26]], "TM":[], "egg":[], "tutor":[]},
+	{"name":"Kickit", "level":[[1,33], [1,51], [10,52], [10, 26]], "TM":[], "egg":[], "tutor":[]},
+	{"name":"Krichop", "level":[[1,33], [1,51], [7,52], [8, 26], [16, 22]], "TM":[], "egg":[], "tutor":[]},
+	{"name":"Pyrring", "level":[[1,10], [1,9], [9,48], [11, 44]], "TM":[], "egg":[], "tutor":[]}
+]}

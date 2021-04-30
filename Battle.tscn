@@ -1,0 +1,186 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Battle.gd" type="Script" id=1]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 786.0
+margin_top = 419.0
+margin_right = 987.0
+margin_bottom = 573.0
+
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 80.0
+margin_top = 40.0
+margin_right = 124.0
+margin_bottom = 54.0
+text = "Battle!"
+
+[node name="Button" type="Button" parent="Panel"]
+margin_left = 81.0
+margin_top = 65.0
+margin_right = 116.0
+margin_bottom = 85.0
+text = "End"
+
+[node name="move panel" type="Panel" parent="."]
+margin_left = 638.0
+margin_top = 11.0
+margin_right = 996.0
+margin_bottom = 185.0
+
+[node name="move 1" type="Label" parent="move panel"]
+margin_left = 31.0
+margin_top = 19.0
+margin_right = 73.0
+margin_bottom = 38.0
+text = "Move"
+
+[node name="Button" type="Button" parent="move panel/move 1"]
+margin_left = -4.0
+margin_top = 27.0
+margin_right = 83.0
+margin_bottom = 47.0
+
+[node name="move 2" type="Label" parent="move panel"]
+margin_left = 206.0
+margin_top = 22.0
+margin_right = 246.0
+margin_bottom = 36.0
+text = "Move"
+
+[node name="Button" type="Button" parent="move panel/move 2"]
+margin_left = -5.0
+margin_top = 24.0
+margin_right = 80.0
+margin_bottom = 44.0
+
+[node name="move 3" type="Label" parent="move panel"]
+margin_left = 32.0
+margin_top = 109.0
+margin_right = 72.0
+margin_bottom = 123.0
+text = "Move"
+
+[node name="Button" type="Button" parent="move panel/move 3"]
+margin_left = -3.0
+margin_top = 24.0
+margin_right = 83.0
+margin_bottom = 44.0
+
+[node name="move 4" type="Label" parent="move panel"]
+margin_left = 210.0
+margin_top = 113.0
+margin_right = 250.0
+margin_bottom = 127.0
+text = "Move"
+
+[node name="Button" type="Button" parent="move panel/move 4"]
+margin_left = -5.0
+margin_top = 20.0
+margin_right = 85.0
+margin_bottom = 40.0
+
+[node name="text panel" type="Panel" parent="."]
+margin_left = 16.0
+margin_top = 480.0
+margin_right = 685.0
+margin_bottom = 593.0
+
+[node name="text box" type="Label" parent="text panel"]
+margin_left = 11.0
+margin_top = 10.0
+margin_right = 625.0
+margin_bottom = 61.0
+text = "Text Goes Here"
+
+[node name="autowin" type="Button" parent="."]
+margin_left = 832.0
+margin_top = 274.0
+margin_right = 979.0
+margin_bottom = 353.0
+text = "Auto-win"
+
+[node name="new move panel" type="Panel" parent="."]
+visible = false
+margin_left = 164.0
+margin_top = 165.0
+margin_right = 515.0
+margin_bottom = 344.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="yes button" type="Button" parent="new move panel"]
+margin_left = 42.6874
+margin_top = 80.2523
+margin_right = 131.687
+margin_bottom = 103.252
+text = "Yes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="no button" type="Button" parent="new move panel"]
+margin_left = 200.631
+margin_top = 81.1061
+margin_right = 289.631
+margin_bottom = 104.106
+text = "No"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="move1 button" type="Button" parent="new move panel"]
+visible = false
+margin_left = 29.6029
+margin_top = 34.1077
+margin_right = 107.603
+margin_bottom = 54.1077
+text = "Move 1"
+
+[node name="move2 button" type="Button" parent="new move panel"]
+visible = false
+margin_left = 209.151
+margin_top = 34.1077
+margin_right = 287.151
+margin_bottom = 54.1077
+text = "Move 2"
+
+[node name="move3 button" type="Button" parent="new move panel"]
+visible = false
+margin_left = 34.1076
+margin_top = 107.471
+margin_right = 112.108
+margin_bottom = 127.471
+text = "Move 3"
+
+[node name="move4 button" type="Button" parent="new move panel"]
+visible = false
+margin_left = 210.438
+margin_top = 106.184
+margin_right = 288.438
+margin_bottom = 126.184
+text = "Move 4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="new move button" type="Button" parent="new move panel"]
+visible = false
+margin_left = 133.597
+margin_top = 149.037
+margin_right = 211.597
+margin_bottom = 169.037
+text = "New Move"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="new move panel"]
+margin_right = 347.0
+margin_bottom = 29.0
+text = "PKMN wants to learn the move BLANK. Teach it the new move?"
+autowrap = true
