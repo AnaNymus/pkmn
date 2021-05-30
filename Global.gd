@@ -20,6 +20,8 @@ var acc_stage = [1/3.0, 3/8.0, 3/7.0, 1/2.0, 3/5.0, 3/4.0, 1, 4/3.0, 5/3.0, 2, 7
 
 var crit_stage = [24, 8, 2, 1, 1]
 
+var types = ["Normal", "Fighting", "Flying", "Poison", "Ground", "Rock", "Bug", "Ghost", "Steel", "Fire", "Water", "Grass", "Electric", "Psychic", "Ice", "Dragon", "Dark", "Fairy"]
+
 var type_effect = [
 [1,1,1,1,1,0.5,1,0,0.5,1,1,1,1,1,1,1,1,1],
 [2,1,0.5,0.5,1,2,0.5,0,2,1,1,1,1,0.5,2,1,2,0.5],
@@ -43,7 +45,7 @@ var type_effect = [
 
 #player's current party of pokemon
 #NOTE: currently only 1 pokemon, need to make it a full 6
-var party = [0, 0, 0, 0, 0, 0]
+var party = [null, null, null, null, null, null]
 
 func _ready():
 	get_pokemon_battle_data()
@@ -87,11 +89,11 @@ func get_pokemon_battle_data():
 	
 
 # temporary utility function, generates pokemon to fill the player's party
-func gen_player_pokemon(pk, lv):	
+func gen_player_pokemon(pk, lv, pos):	
 	#mudkip at level 15
-	party[0] = pkmn.instance()
-	party[0].setup([pk, lv])
-	party[0].make_players()
+	party[pos] = pkmn.instance()
+	party[pos].setup([pk, lv])
+	party[pos].make_players()
 	
 
 func get_base_experience(species):

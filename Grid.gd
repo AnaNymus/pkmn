@@ -199,5 +199,11 @@ func check_in_front(world_pos, dir):
 	
 	if cell_type == HEAL:
 		print("healing pokemon!")
-		global.party[0].full_heal()
+		for x in 6:
+			global.party[x].full_heal()
 	
+
+
+func _on_pkmn_pressed():
+	save_board()
+	get_tree().change_scene("res://stats_page.tscn")

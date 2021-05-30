@@ -8,6 +8,7 @@ const num_frame = 6
 var frame_counter = num_frame
 
 var controls_locked = false
+var controls_locked2 = false
 
 const UP = Vector2(0, -1)
 const RIGHT = Vector2(1, 0)
@@ -50,18 +51,22 @@ func _get_input():
 		sprite.change_direction(dir)
 		return true
 	else:
-		if Input.is_action_pressed("ui_s"):
+		if Input.is_action_just_pressed("ui_s"):
 			change_state(SWIM)
 			print("swimming")
-		elif Input.is_action_pressed("ui_c"):
+		elif Input.is_action_just_pressed("ui_c"):
 			grid.save_board()
 			get_tree().change_scene("res://Battle.tscn")
-		elif Input.is_action_pressed("ui_h"):
+		elif Input.is_action_just_pressed("ui_h"):
 			#heals pokemon for beta
 			print("Healing Pokemon")
 			global.party[0].full_heal()
-		elif Input.is_action_pressed("ui_a"):
+		elif Input.is_action_just_pressed("ui_a"):
 			grid.check_in_front(self.position, direction)
+		elif Input.is_action_just_pressed("ui_select"):
+			controls_locked2 = true
+			self.get_node("menu").visible = true
+			#todo: lock player movement, and show start menu
 		return false
 	
 
@@ -83,16 +88,23 @@ func trans():
 	translate(direction*16)
 
 func _physics_process(delta):
-	frame_counter += 1
+	if !controls_locked2:
 	
-	if frame_counter >= num_frame:
+		frame_counter += 1
+	
+		if frame_counter >= num_frame:
 		
-		if !controls_locked:
-			if _get_input():
-				var target_pos = grid.update_child_pos(self)
-				if target_pos != null:
-					controls_locked = true
+			if !controls_locked:
+				if _get_input():
+					var target_pos = grid.update_child_pos(self)
+					if target_pos != null:
+						controls_locked = true
 		
-		if controls_locked:
-			sprite.update_image()
-			frame_counter = 0
+			if controls_locked:
+				sprite.update_image()
+				frame_counter = 0
+
+
+func _on_exit_pressed():
+	self.get_node("menu").visible = false
+	controls_locked2 = false

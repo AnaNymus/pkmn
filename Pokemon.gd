@@ -539,6 +539,21 @@ func regen_stats():
 			stats[x] = round(stats[x])
 
 func setup_display():
+	var sprite_folder = ""
+	
+	if species < 10:
+		sprite_folder = "sprites/00" + str(species)
+	elif species < 100:
+		sprite_folder = "sprites/0" + str(species)
+	else:
+		sprite_folder = "sprites/" + str(species)
+	
+	var spr = self.get_node("Sprite")
+	
+	# TODO: change for shiny/alternate forms
+	spr.set_texture(load(sprite_folder + "/01_base.png"))
+	spr.vframes = 2
+	
 	var name_label = self.get_child(1).get_child(3)
 	var level_label = self.get_child(1).get_child(4)
 	var status_label = self.get_child(1).get_child(5)

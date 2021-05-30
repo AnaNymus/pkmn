@@ -21,13 +21,18 @@ func _ready():
 
 
 func _on_grass_Button_pressed():
-	global.gen_player_pokemon(1, 15)
+	global.gen_player_pokemon(1, 15, 0)
+	global.gen_player_pokemon(12, 5, 1)
 	get_tree().change_scene("res://test_overworld.tscn")
 	
 func _on_fire_Button_pressed():
-	global.gen_player_pokemon(4, 15)
+	global.gen_player_pokemon(4, 15, 0)
+	global.gen_player_pokemon(12, 14, 1)
+	global.gen_player_pokemon(14, 10, 2)
+	global.gen_player_pokemon(17, 5, 3)
 	get_tree().change_scene("res://test_overworld.tscn")
 	
 func _on_water_Button_pressed():
-	global.gen_player_pokemon(7, 15)
+	global.gen_player_pokemon(7, 15, 0)
+	global.gen_player_pokemon(12, 14, 1)
 	get_tree().change_scene("res://test_overworld.tscn")

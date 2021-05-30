@@ -35,3 +35,71 @@ drag_margin_left = 0.0
 drag_margin_top = 0.0
 drag_margin_right = 0.0
 drag_margin_bottom = 0.0
+
+[node name="menu" type="Panel" parent="Grid/Player"]
+visible = false
+margin_left = 264.63
+margin_top = -298.0
+margin_right = 509.63
+margin_bottom = 297.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dex" type="Button" parent="Grid/Player/menu"]
+margin_left = 23.0
+margin_top = 28.7798
+margin_right = 225.0
+margin_bottom = 64.7798
+text = "Pokedex"
+
+[node name="pkmn" type="Button" parent="Grid/Player/menu"]
+margin_left = 28.0397
+margin_top = 96.8155
+margin_right = 230.04
+margin_bottom = 132.816
+text = "Pokemon"
+
+[node name="bag" type="Button" parent="Grid/Player/menu"]
+margin_left = 24.2599
+margin_top = 176.82
+margin_right = 226.26
+margin_bottom = 212.82
+text = "Bag"
+
+[node name="map" type="Button" parent="Grid/Player/menu"]
+margin_left = 25.5198
+margin_top = 246.746
+margin_right = 227.52
+margin_bottom = 282.746
+text = "Map"
+
+[node name="player" type="Button" parent="Grid/Player/menu"]
+margin_left = 23.0
+margin_top = 320.452
+margin_right = 225.0
+margin_bottom = 356.452
+text = "Player"
+
+[node name="save" type="Button" parent="Grid/Player/menu"]
+margin_left = 22.37
+margin_top = 390.377
+margin_right = 224.37
+margin_bottom = 426.377
+text = "Save"
+
+[node name="options" type="Button" parent="Grid/Player/menu"]
+margin_left = 18.5903
+margin_top = 461.563
+margin_right = 220.59
+margin_bottom = 497.563
+text = "Options"
+
+[node name="exit" type="Button" parent="Grid/Player/menu"]
+margin_left = 21.1101
+margin_top = 534.008
+margin_right = 223.11
+margin_bottom = 570.008
+text = "Exit"
+[connection signal="pressed" from="Grid/Player/menu/pkmn" to="Grid" method="_on_pkmn_pressed"]
+[connection signal="pressed" from="Grid/Player/menu/exit" to="Grid/Player" method="_on_exit_pressed"]
