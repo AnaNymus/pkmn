@@ -24,6 +24,8 @@ var confirm_deletion = false
 var new_move
 var delete_index
 
+var escape_count = 0
+
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
@@ -69,9 +71,11 @@ func _ready():
 #this handles the order of events for calling moves
 func move_round(user_move):
 	controls_locked = true
-
 	
-	var us_mv = global.moves[p_pkmn.get_move(user_move)]
+	var us_mv
+	
+	if user_move >= 0:
+		us_mv = global.moves[p_pkmn.get_move(user_move)]
 	
 	var op_mv_ind = opponent.get_random_move()
 	var op_mv = global.moves[opponent.moves[op_mv_ind]]
@@ -89,33 +93,49 @@ func move_round(user_move):
 	#for now, attacking is the only option
 	
 	#priority trumps other things
-	if us_mv["pri"] > op_mv["pri"]:
-		player_first = true
-	elif us_mv["pri"] > op_mv["pri"]:
-		player_first = false
-	else: 
-		#quick claw and some other items n stuff have an effect here
-		var us_speed = p_pkmn.calculate_speed()
-		var op_speed = opponent.calculate_speed()
-		
-		if us_speed > op_speed:
+	if user_move >= 0:
+		if us_mv["pri"] > op_mv["pri"]:
 			player_first = true
-		elif op_speed > us_speed:
+		elif us_mv["pri"] > op_mv["pri"]:
 			player_first = false
-		else:
-			if randi()%2 == 1:
+		else: 
+			#quick claw and some other items n stuff have an effect here
+			var us_speed = p_pkmn.calculate_speed()
+			var op_speed = opponent.calculate_speed()
+		
+			if us_speed > op_speed:
 				player_first = true
-			else:
+			elif op_speed > us_speed:
 				player_first = false
+			else:
+				if randi()%2 == 1:
+					player_first = true
+				else:
+					player_first = false
 	
 	
 	if player_first:
-		#execute player move
-		if not us_mv["who"] == "self":
-			execute_move(us_mv, p_pkmn, opponent, true, user_move)
+		if user_move == -1:
+			escape_count = escape_count + 1
+			
+			var f = ((p_pkmn.stats[5] * 128)/opponent.stats[5]) + (30 * escape_count)
+			
+			if randi()%255 < f:
+				text_box.text = str(p_pkmn.pkmn_name + " ran away!")
+				yield(get_tree().create_timer(1.0), "timeout")
+				end_battle()
+			else:
+				text_box.text = str("Can't escape!")
+				yield(get_tree().create_timer(1.0), "timeout")
+				
 		else:
-			execute_move(us_mv, p_pkmn, p_pkmn, true, user_move)
-		yield(self, "move_finished")
+		
+			#execute player move
+			if not us_mv["who"] == "self":
+				execute_move(us_mv, p_pkmn, opponent, true, user_move)
+			else:
+				execute_move(us_mv, p_pkmn, p_pkmn, true, user_move)
+			yield(self, "move_finished")
 		
 		#execute opponent move
 		if not op_mv["who"] == "self":
@@ -854,3 +874,14 @@ func _delete_new_move():
 	
 	
 	
+
+
+func _on_run_pressed():
+	if not controls_locked:
+		if p_pkmn.stats[5] > opponent.stats[5]:
+			text_box.text = str(p_pkmn.pkmn_name + " ran away!")
+			yield(get_tree().create_timer(1.0), "timeout")
+			end_battle()
+		else:
+			move_round(-1)
+		

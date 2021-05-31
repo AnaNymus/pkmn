@@ -7,23 +7,29 @@ script = ExtResource( 1 )
 
 [node name="Panel" type="Panel" parent="."]
 margin_left = 786.0
-margin_top = 419.0
+margin_top = 498.0
 margin_right = 987.0
 margin_bottom = 573.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="Panel"]
-margin_left = 80.0
-margin_top = 40.0
-margin_right = 124.0
-margin_bottom = 54.0
+margin_left = 79.0
+margin_top = 17.0
+margin_right = 123.0
+margin_bottom = 31.0
 text = "Battle!"
 
 [node name="Button" type="Button" parent="Panel"]
-margin_left = 81.0
-margin_top = 65.0
-margin_right = 116.0
-margin_bottom = 85.0
-text = "End"
+margin_left = 70.0
+margin_top = 41.0
+margin_right = 140.0
+margin_bottom = 61.0
+text = "Auto-End"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="move panel" type="Panel" parent="."]
 margin_left = 638.0
@@ -184,3 +190,47 @@ margin_right = 347.0
 margin_bottom = 29.0
 text = "PKMN wants to learn the move BLANK. Teach it the new move?"
 autowrap = true
+
+[node name="options panel" type="Panel" parent="."]
+margin_left = 769.0
+margin_top = 376.0
+margin_right = 994.0
+margin_bottom = 479.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="attack" type="Button" parent="options panel"]
+margin_left = 55.0418
+margin_top = 20.9966
+margin_right = 175.042
+margin_bottom = 40.9966
+text = "attack"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="item" type="Button" parent="options panel"]
+margin_left = 12.3281
+margin_top = 64.3348
+margin_right = 79.3281
+margin_bottom = 84.3348
+text = "item"
+
+[node name="run" type="Button" parent="options panel"]
+margin_left = 86.9909
+margin_top = 77.0102
+margin_right = 152.991
+margin_bottom = 97.0102
+text = "run"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="shift" type="Button" parent="options panel"]
+margin_left = 159.995
+margin_top = 62.6674
+margin_right = 221.995
+margin_bottom = 82.6674
+text = "shift"
+[connection signal="pressed" from="options panel/run" to="." method="_on_run_pressed"]
