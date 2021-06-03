@@ -1,0 +1,197 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://stats_page.gd" type="Script" id=1]
+[ext_resource path="res://substitute_doll.png" type="Texture" id=2]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Panel0" type="Panel" parent="."]
+margin_left = 3.0
+margin_right = 320.0
+margin_bottom = 599.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pkmn1" type="Button" parent="Panel0"]
+margin_left = 39.2063
+margin_top = 22.6127
+margin_right = 287.207
+margin_bottom = 75.6127
+text = "pkmn1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pkmn2" type="Button" parent="Panel0"]
+margin_left = 33.6504
+margin_top = 97.2205
+margin_right = 281.651
+margin_bottom = 150.22
+text = "pkmn2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pkmn3" type="Button" parent="Panel0"]
+margin_left = 38.4126
+margin_top = 176.591
+margin_right = 286.413
+margin_bottom = 229.591
+text = "pkmn3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pkmn4" type="Button" parent="Panel0"]
+margin_left = 38.4126
+margin_top = 256.754
+margin_right = 286.413
+margin_bottom = 309.754
+text = "pkmn4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pkmn5" type="Button" parent="Panel0"]
+margin_left = 38.4126
+margin_top = 336.918
+margin_right = 286.412
+margin_bottom = 389.918
+text = "pkmn5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pkmn6" type="Button" parent="Panel0"]
+margin_left = 38.4126
+margin_top = 419.463
+margin_right = 286.413
+margin_bottom = 472.463
+text = "pkmn6"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exit" type="Button" parent="Panel0"]
+margin_left = 71.0
+margin_top = 516.0
+margin_right = 268.0
+margin_bottom = 566.0
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel1" type="Panel" parent="."]
+margin_left = 329.0
+margin_top = 1.0
+margin_right = 1020.0
+margin_bottom = 597.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="name_label" type="Label" parent="Panel1"]
+margin_left = 22.9512
+margin_top = 19.3008
+margin_right = 244.951
+margin_bottom = 43.3008
+text = "Nickname/Species"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level" type="Label" parent="Panel1"]
+margin_left = 27.7795
+margin_top = 303.194
+margin_right = 67.7795
+margin_bottom = 317.194
+text = "Lvl X m/f"
+
+[node name="sprite" type="Sprite" parent="Panel1"]
+position = Vector2( 145.709, 163.518 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+vframes = 2
+
+[node name="types" type="Label" parent="Panel1"]
+margin_left = 30.1606
+margin_top = 330.973
+margin_right = 70.1606
+margin_bottom = 344.973
+text = "Types"
+
+[node name="ability" type="Label" parent="Panel1"]
+margin_left = 31.748
+margin_top = 357.165
+margin_right = 72.748
+margin_bottom = 371.165
+text = "Ability"
+
+[node name="nature" type="Label" parent="Panel1"]
+margin_left = 34.9229
+margin_top = 385.738
+margin_right = 74.9229
+margin_bottom = 399.738
+text = "Nature"
+
+[node name="item" type="Label" parent="Panel1"]
+margin_left = 41.2725
+margin_top = 427.805
+margin_right = 81.2725
+margin_bottom = 441.805
+text = "Item"
+
+[node name="experience" type="Label" parent="Panel1"]
+margin_left = 38.0977
+margin_top = 469.871
+margin_right = 109.098
+margin_bottom = 483.871
+text = "experience"
+
+[node name="to_next_level" type="Label" parent="Panel1"]
+margin_left = 41.2724
+margin_top = 510.349
+margin_right = 121.272
+margin_bottom = 524.349
+text = "to next level"
+
+[node name="move1" type="Label" parent="Panel1"]
+margin_left = 489.713
+margin_top = 298.431
+margin_right = 529.713
+margin_bottom = 312.431
+text = "move1"
+
+[node name="move2" type="Label" parent="Panel1"]
+margin_left = 496.063
+margin_top = 342.085
+margin_right = 540.063
+margin_bottom = 356.085
+text = "move2"
+
+[node name="move3" type="Label" parent="Panel1"]
+margin_left = 500.031
+margin_top = 398.438
+margin_right = 540.031
+margin_bottom = 412.438
+text = "move3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="move4" type="Label" parent="Panel1"]
+margin_left = 497.65
+margin_top = 445.266
+margin_right = 541.65
+margin_bottom = 459.266
+text = "move4"
+[connection signal="pressed" from="Panel0/pkmn1" to="." method="_on_pkmn1_pressed"]
+[connection signal="pressed" from="Panel0/pkmn2" to="." method="_on_pkmn2_pressed"]
+[connection signal="pressed" from="Panel0/pkmn3" to="." method="_on_pkmn3_pressed"]
+[connection signal="pressed" from="Panel0/pkmn4" to="." method="_on_pkmn4_pressed"]
+[connection signal="pressed" from="Panel0/pkmn5" to="." method="_on_pkmn5_pressed"]
+[connection signal="pressed" from="Panel0/pkmn6" to="." method="_on_pkmn6_pressed"]
+[connection signal="pressed" from="Panel0/exit" to="." method="_on_exit_pressed"]
